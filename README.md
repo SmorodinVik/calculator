@@ -1,1 +1,1 @@
-# text project for byndyusoft
+# text project for byndyusoft company
