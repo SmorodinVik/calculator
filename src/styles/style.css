@@ -10,7 +10,7 @@ h1 {
   font-size: 5vh;
 }
 
-.wrapper {
+#wrapper {
   position: absolute;
 
   display: flex;
@@ -119,7 +119,7 @@ h1 {
 }
 
 @media (max-width: 500px) {
-  .wrapper {
+  #wrapper {
     background: linear-gradient(315deg, rgb(40, 81, 142), rgb(58, 119, 209));
     background: -webkit-linear-gradient(315deg, rgb(40, 81, 142), rgb(58, 119, 209));
     background: -moz-linear-gradient(315deg, rgb(40, 81, 142), rgb(58, 119, 209));

@@ -1,1 +1,6 @@
 node_modules
+dist
+component_backup
+.vscode
+.DS_Store
+.vercel
