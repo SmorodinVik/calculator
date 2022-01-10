@@ -90,7 +90,7 @@ body {
   background: none;
 }
 
-.display-result {
+.font-bold {
   font-size: 5vh;
   font-weight: bold;
 }
@@ -126,7 +126,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font: inherit;
+  color: inherit;
+
   background: none;
+  border: none;
   border-radius: 30vh;
 }
 
