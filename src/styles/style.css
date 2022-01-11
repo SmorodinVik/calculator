@@ -143,9 +143,17 @@ body {
   cursor: pointer;
 }
 
+.button:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 .button-white:hover {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   cursor: pointer;
+}
+
+.button-white:active {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 500px) {
