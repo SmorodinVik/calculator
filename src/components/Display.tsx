@@ -5,7 +5,7 @@ type DisplayProps = {
   className: string,
 }
 
-const Display = ({ value, className }: DisplayProps) => (
+const Display: React.FC<DisplayProps> = ({ value, className }) => (
   <div className={className}>
     <p>{value}</p>
   </div>

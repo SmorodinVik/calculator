@@ -1,7 +1,7 @@
 install:
 	npm install
 lint:
-	npx eslint .
+	npx eslint ./src
 build:
 	rm -rf dist
 	NODE_ENV=production npm run build

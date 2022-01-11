@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Display from './components/Display';
 import Button from './components/Button';
+import calculate from './utils/calculate';
 
 const App: React.FC = () => {
   const [expression, setExpression] = useState('0');
@@ -24,8 +25,7 @@ const App: React.FC = () => {
   };
 
   const handleCalculate = () => {
-    // eslint-disable-next-line no-eval
-    setResult(eval(expression));
+    setResult(calculate(expression));
   };
 
   const buttonActions: { [key: string]: () => void } = {
