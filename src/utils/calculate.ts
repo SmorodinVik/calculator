@@ -16,7 +16,7 @@ const actions: { [key: string]: (arg1: number, arg2: number) => number } = {
 
 type MixedArray = Array<number | string>;
 
-const parseExpression = (expression: string): MixedArray => {
+export const parseExpression = (expression: string): MixedArray => {
   const normalizedExpression = expression.replace(/,/g, '.').replace(/×/g, '*');
 
   const partsOfNumber = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
@@ -41,7 +41,7 @@ const parseExpression = (expression: string): MixedArray => {
   return result;
 };
 
-const convertToRPN = (arr: MixedArray): MixedArray => {
+export const convertToRPN = (arr: MixedArray): MixedArray => {
   const stack: MixedArray = [];
   const result: MixedArray = [];
 
@@ -92,7 +92,7 @@ const convertToRPN = (arr: MixedArray): MixedArray => {
   return result;
 };
 
-const calculateRPN = (stack: MixedArray): number => {
+export const calculateRPN = (stack: MixedArray): number => {
   const lastEl = stack.pop();
   if (typeof lastEl === 'undefined') {
     throw new Error('wrong expression');
