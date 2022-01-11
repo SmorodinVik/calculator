@@ -79,11 +79,11 @@ body {
   align-items: center;
 }
 
-.display {
-  position: relative;
-  
+.display { 
   width: 100%;
   height: 8vh;
+
+  overflow: hidden;
 
   font-size: 3vh;
   
@@ -95,19 +95,9 @@ body {
   font-weight: bold;
 }
 
-.display:nth-child(2)::after {
-  position: absolute;
-  bottom: -1vh;
- 
-  width: 100%;
-  height: 0.1vh;
-  content: '';
-  background: white;
-
-  opacity: 0.5;
-}
-
 .buttons {
+  position: relative;
+
   width: 100%;
   height: 50vh;
   
@@ -120,6 +110,18 @@ body {
   grid-gap: 1.5vh 4vh;
   
   background: none;
+}
+
+.buttons::before {
+  position: absolute;
+  top: -3vh;
+ 
+  width: 100%;
+  height: 0.1vh;
+  content: '';
+  background: white;
+
+  opacity: 0.5;
 }
 
 .button {
