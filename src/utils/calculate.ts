@@ -16,16 +16,15 @@ const actions: { [key: string]: (arg1: number, arg2: number) => number } = {
 
 type MixedArray = Array<number | string>;
 
-const parseString = (str: string): MixedArray => {
-  const normalizedStr = str.replace(/,/g, '.').replace(/×/g, '*');
+const parseExpression = (expression: string): MixedArray => {
+  const normalizedExpression = expression.replace(/,/g, '.').replace(/×/g, '*');
 
-  const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-
+  const partsOfNumber = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
   const result: MixedArray = [];
   let number = '';
 
-  normalizedStr.split('').forEach((symb) => {
-    if (numbers.includes(symb)) {
+  normalizedExpression.split('').forEach((symb) => {
+    if (partsOfNumber.includes(symb)) {
       number += symb;
     } else {
       if (number !== '') {
@@ -86,6 +85,7 @@ const convertToRPN = (arr: MixedArray): MixedArray => {
       stack.push(el);
     }
   });
+
   if (stack.length !== 0) {
     result.push(...stack.reverse());
   }
@@ -106,12 +106,12 @@ const calculateRPN = (stack: MixedArray): number => {
 };
 
 export default (expression: string): string => {
-  const parsedExpression = parseString(expression);
+  const parsedExpression = parseExpression(expression);
   try {
     const convertedExpression = convertToRPN(parsedExpression);
     const result = calculateRPN(convertedExpression);
     return String(result).replace(/\./g, ',');
   } catch (e) {
-    return 'wrong expression';
+    return 'error';
   }
 };

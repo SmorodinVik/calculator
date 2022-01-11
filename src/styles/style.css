@@ -12,9 +12,8 @@
 
 body {
   margin: 0;
-  
+
   font: 3.5vh "Geometria", "sans-serif";
-  
   color: white;
 }
 
@@ -72,14 +71,11 @@ body {
   z-index: -1;
 }
 
-.justify-right {
+.display {
   display: flex;
- 
   justify-content: right;
   align-items: center;
-}
 
-.display { 
   width: 100%;
   height: 8vh;
 
@@ -154,20 +150,36 @@ body {
 
 @media (max-width: 500px) {
   #wrapper {
-    width: 120%;
-    height: 120%;
-
     background: linear-gradient(315deg, rgb(40, 81, 142), rgb(58, 119, 209));
     background: -webkit-linear-gradient(315deg, rgb(40, 81, 142), rgb(58, 119, 209));
     background: -moz-linear-gradient(315deg, rgb(40, 81, 142), rgb(58, 119, 209));
   }
   
   .calc {
+    width: 100%;
+
     background: none;
     box-shadow: none;
   }
   
   .calc::before {
+    display: none;
+  }
+
+  .buttons {
+    position: relative;
+  
+    width: 100%;
+    height: 100vw;
+    
+    margin-top: 9vw;
+    
+    display: grid;
+    grid-template-rows: repeat(5, 18vw);
+    grid-template-columns: repeat(4, 18vw);
+    justify-content: center;
+    grid-gap: 2vw 4vw;
+    
     background: none;
   }
 }

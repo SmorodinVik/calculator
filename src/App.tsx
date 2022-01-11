@@ -68,8 +68,8 @@ const App: React.FC = () => {
 
   return (
     <div className="calc">
-      <Display className="display justify-right" value={expression} />
-      <Display className="display font-bold justify-right" value={result} />
+      <Display className="display" value={expression} />
+      <Display className="display font-bold" value={result} />
       <div className="buttons">
         <Button value="C" handleClick={buttonActions.c} />
         <Button value="&radic;" handleClick={buttonActions.none} />
