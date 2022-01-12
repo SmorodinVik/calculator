@@ -21,21 +21,29 @@ export const parseExpression = (expression: string): MixedArray => {
 
   const partsOfNumber = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
   const result: MixedArray = [];
-  let number = '';
+  let numberInString = '';
 
   normalizedExpression.split('').forEach((symb) => {
     if (partsOfNumber.includes(symb)) {
-      number += symb;
+      numberInString += symb;
     } else {
-      if (number !== '') {
-        result.push(Number(number));
-        number = '';
+      if (numberInString !== '') {
+        const number = Number(numberInString);
+        if (Number.isNaN(number)) {
+          throw new Error('error');
+        }
+        result.push(number);
+        numberInString = '';
       }
       result.push(symb);
     }
   });
 
-  if (number !== '') {
+  if (numberInString !== '') {
+    const number = Number(numberInString);
+    if (Number.isNaN(number)) {
+      throw new Error('error');
+    }
     result.push(Number(number));
   }
   return result;
@@ -106,8 +114,8 @@ export const calculateRPN = (stack: MixedArray): number => {
 };
 
 export default (expression: string): string => {
-  const parsedExpression = parseExpression(expression);
   try {
+    const parsedExpression = parseExpression(expression);
     const convertedExpression = convertToRPN(parsedExpression);
     const result = calculateRPN(convertedExpression);
     return String(result).replace(/\./g, ',');
