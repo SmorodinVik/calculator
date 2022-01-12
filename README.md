@@ -3,7 +3,9 @@
 
 *test project for Byndyusoft company*
 
-Simple calculator application written in TypeScript.
+#### Simple calculator application written in TypeScript.
+
+[https://calculator-rust-pi.vercel.app](https://calculator-rust-pi.vercel.app)
 
 
 ### Install:
